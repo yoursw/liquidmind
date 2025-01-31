@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Record Your Mindfulness Experience</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Record Your Mindfulness Experience</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  {# Render the form using the default layout #}
+        <button type="submit">Save Experience</button>
+    </form>
+
+    <script>
+        const durationTrackedCheckbox = document.getElementById('id_duration_tracked');
+        const durationFields = document.querySelector('.duration-fields');
+
+        durationTrackedCheckbox.addEventListener('change', () => {
+            if (durationTrackedCheckbox.checked) {
+                durationFields.classList.remove('hidden');
+            } else {
+                durationFields.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

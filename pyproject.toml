@@ -1,0 +1,17 @@
+[project]
+name = "liquid_mind"
+version = "0.1.0"
+description = "A web application for mindfulness experiences"
+authors = [
+  { name = "Kusala Tech" },
+]
+
+dependencies = [
+    "Django ~= 5.1.5"
+]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
